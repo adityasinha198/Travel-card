@@ -7,11 +7,12 @@ import Select from '@mui/material/Select';
 
 export default function DropDown(props) {
 
-    const { label } = props; 
+    const { label, onChange } = props; 
     const [opt, setOpt] = React.useState('');
 
     const handleChange = (event) => {
         setOpt(event.target.value);
+        onChange(event.target.value);
     };
 
     return (
