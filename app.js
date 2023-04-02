@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const fareRoute = require('./routes/fareRoute')
+const cors = require('cors')
 const app = express()
 
 mongoose.connect("mongodb://0.0.0.0:27017/Travel_card",(err)=>{
@@ -14,6 +15,7 @@ mongoose.connect("mongodb://0.0.0.0:27017/Travel_card",(err)=>{
 
 dotenv.config()
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 
